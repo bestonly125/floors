@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Agency Detail{% endblock %}
+
+{% block content %}
+  <h2>{{ agency.agency_name }}</h2>
+  <p>Address: {{ agency.address }}</p>
+  <p>Phone: {{ agency.phone_number }}</p>
+  <a href="{% url 'agency-update' agency.pk %}">Edit</a>
+  <a href="{% url 'agency-delete' agency.pk %}">Delete</a>
+  <a href="{% url 'agency-list' %}">Back to list</a>
+{% endblock %}

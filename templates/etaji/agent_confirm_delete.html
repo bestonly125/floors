@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Delete Agent{% endblock %}
+
+{% block content %}
+  <h2>Are you sure you want to delete "{{ agent.person.first_name }} {{ agent.person.last_name }}"?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+  </form>
+  <a href="{% url 'agent-list' %}">Cancel</a>
+{% endblock %}

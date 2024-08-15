@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Real Estate App{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>My Real Estate App</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'apartment-list' %}">Apartments</a></li>
+                <li><a href="{% url 'person-list' %}">Persons</a></li>
+                <li><a href="{% url 'transaction-list' %}">Transactions</a></li>
+                <li><a href="{% url 'agency-list' %}">Agencies</a></li>
+                <li><a href="{% url 'agent-list' %}">Agents</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

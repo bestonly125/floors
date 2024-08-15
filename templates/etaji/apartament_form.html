@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Apartment Form{% endblock %}
+
+{% block content %}
+  <h2>Apartment Form</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+  <a href="{% url 'apartment-list' %}">Back to list</a>
+{% endblock %}

@@ -1,4 +1,7 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from . import views
 from .views import (
     ApartmentListView, ApartmentDetailView, ApartmentCreateView, ApartmentUpdateView, ApartmentDeleteView,
     PersonListView, PersonDetailView, PersonCreateView, PersonUpdateView, PersonDeleteView,
@@ -38,3 +41,6 @@ urlpatterns = [
     path('agents/<int:pk>/edit/', AgentUpdateView.as_view(), name='agent-update'),
     path('agents/<int:pk>/delete/', AgentDeleteView.as_view(), name='agent-delete'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

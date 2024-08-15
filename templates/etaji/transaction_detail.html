@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Transaction Detail{% endblock %}
+
+{% block content %}
+  <h2>Transaction {{ transaction.pk }}</h2>
+  <p>Apartment: {{ transaction.apartment.address }}, {{ transaction.apartment.city }}</p>
+  <p>Seller: {{ transaction.seller.first_name }} {{ transaction.seller.last_name }}</p>
+  <p>Buyer: {{ transaction.buyer.first_name }} {{ transaction.buyer.last_name }}</p>
+  <p>Date: {{ transaction.transaction_date }}</p>
+  <p>Sale Price: {{ transaction.sale_price }}</p>
+  <a href="{% url 'transaction-update' transaction.pk %}">Edit</a>
+  <a href="{% url 'transaction-delete' transaction.pk %}">Delete</a>
+  <a href="{% url 'transaction-list' %}">Back to list</a>
+{% endblock %}

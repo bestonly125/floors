@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Apartment List{% endblock %}
+
+{% block content %}
+  <h2>Apartment List</h2>
+  <ul>
+    {% for apartment in apartments %}
+      <li>
+        <a href="{% url 'apartment-detail' apartment.pk %}">{{ apartment.address }}, {{ apartment.city }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'apartment-create' %}">Add New Apartment</a>
+{% endblock %}

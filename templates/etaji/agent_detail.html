@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Apartment Detail{% endblock %}
+
+{% block content %}
+  <h2>{{ apartment.address }}, {{ apartment.city }}</h2>
+  <p>State: {{ apartment.state }}</p>
+  <p>ZIP: {{ apartment.zip_code }}</p>
+  <p>Square Footage: {{ apartment.square_footage }}</p>
+  <p>Number of Rooms: {{ apartment.number_of_rooms }}</p>
+  <p>Price: {{ apartment.price }}</p>
+  <a href="{% url 'apartment-update' apartment.pk %}">Edit</a>
+  <a href="{% url 'apartment-delete' apartment.pk %}">Delete</a>
+  <a href="{% url 'apartment-list' %}">Back to list</a>
+{% endblock %}
+
